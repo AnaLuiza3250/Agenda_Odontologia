@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Início – Clínica Odontológica</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/principal.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="principal.html">Clínica Odontológica</a>
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="responsaveis.html">Responsáveis</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+        </nav>
+        <div class="usuario">
+            <span>Usuário: <strong id="nome-usuario"></strong></span>
+            <button id="botao-sair" class="sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div id="mensagem" class="aviso" hidden></div>
+
+        <h1 id="saudacao"></h1>
+        <p class="sub">Agendamentos atuais</p>
+
+        <div class="cabecalho-agenda">
+            <div class="controles-mes">
+                <button type="button" id="btn-mes-anterior" class="btn">← Anterior</button>
+                <h2 id="titulo-mes"></h2>
+                <button type="button" id="btn-mes-proximo" class="btn">Próximo →</button>
+                <button type="button" id="btn-hoje" class="btn">Hoje</button>
+            </div>
+        </div>
+
+        <div class="calendario-wrapper">
+            <a href="agendamentos.html" class="btn-novo-flutuante" title="Novo agendamento">+</a>
+            <div id="calendario-grade" class="calendario-grade"></div>
+        </div>
+    </main>
+
+    <script src="js/comum.js"></script>
+    <script src="js/principal.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agendamentos – Clínica Odontológica</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="principal.html">Clínica Odontológica</a>
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="responsaveis.html">Responsáveis</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+        </nav>
+        <div class="usuario">
+            <span>Usuário: <strong id="nome-usuario"></strong></span>
+            <button id="botao-sair" class="sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div id="mensagem" class="aviso" hidden></div>
+
+        <div class="barra-titulo">
+            <h1>Agendamentos</h1>
+            <a class="btn" href="principal.html">← Voltar à tela principal</a>
+        </div>
+
+        <section class="painel">
+            <h2 id="titulo-formulario">Nova consulta</h2>
+
+            <form id="form-agendamento">
+                <input type="hidden" id="id_agendamento">
+
+                <div class="grade">
+                    <div class="campo largo">
+                        <label for="id_paciente">Paciente *</label>
+                        <select id="id_paciente" required>
+                            <option value="">Carregando pacientes...</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="data_consulta">Data e Hora da Consulta *</label>
+                        <input type="datetime-local" id="data_consulta" required>
+                    </div>
+                    <div class="campo largo">
+                        <label for="observacoes">Observações</label>
+                        <input type="text" id="observacoes" maxlength="255" placeholder="Ex: Avaliação inicial, limpeza, retorno...">
+                    </div>
+                </div>
+
+                <div class="acoes">
+                    <button type="submit" id="botao-salvar" class="btn btn-primario">Agendar consulta</button>
+                    <button type="button" id="botao-cancelar-edicao" class="btn" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="barra-titulo">
+                <h2>Consultas agendadas (<span id="total">0</span>)</h2>
+
+                <form id="form-busca" class="busca">
+                    <input type="search" id="busca" placeholder="Buscar por paciente, responsável ou observação">
+                    <button type="submit" class="btn">Buscar</button>
+                    <button type="button" id="botao-limpar-busca" class="btn">Limpar</button>
+                </form>
+            </div>
+
+            <div class="rolagem">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Responsável</th>
+                            <th>Data da Consulta</th>
+                            <th>Observações</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-agendamentos"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/comum.js"></script>
+    <script src="js/agendamentos.js"></script>
+</body>
+</html>
